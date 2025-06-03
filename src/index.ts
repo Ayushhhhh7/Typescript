@@ -117,3 +117,38 @@ const luminosNehal: Employee = {
 
 //If we dont use ?. we will get error "cannot invoke an object which is possibly undefined"
 luminosNehal?.func?.(20, 30);
+
+//=============Functions
+
+//=====Optional Parameter
+type MultiplyNum = (
+  num1: number,
+  num2: number,
+  num3?: number
+) => number | string;
+
+//l is optional(num3)
+const multiplyNum: MultiplyNum = (n, m, l) => {
+  if (typeof l === "undefined") return "L was not provided";
+  return n * m * l;
+};
+
+multiplyNum(10, 20);
+
+//=======Default Parameter when something is kept optional(num3)
+type AddNum = (num1: number, num2: number, num3?: number) => number | string;
+
+const addNum: AddNum = (n, m, l = 20) => {
+  if (typeof l === "undefined") return "L was not provided";
+  return n + m + l;
+};
+
+addNum(10, 20);
+
+//=========Rest operator
+
+type RestFunc = (...values: number[]) => number[];
+
+const restFn: RestFunc = (...values) => values;
+
+console.log("Rest value array", restFn(10, 20, 30, 40));

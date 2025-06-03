@@ -63,3 +63,18 @@ const luminosNehal = {
 };
 //If we dont use ?. we will get error "cannot invoke an object which is possibly undefined"
 (_a = luminosNehal === null || luminosNehal === void 0 ? void 0 : luminosNehal.func) === null || _a === void 0 ? void 0 : _a.call(luminosNehal, 20, 30);
+//l is optional(num3)
+const multiplyNum = (n, m, l) => {
+    if (typeof l === "undefined")
+        return "L was not provided";
+    return n * m * l;
+};
+multiplyNum(10, 20);
+const addNum = (n, m, l = 20) => {
+    if (typeof l === "undefined")
+        return "L was not provided";
+    return n + m + l;
+};
+addNum(10, 20);
+const restFn = (...values) => values;
+console.log("Rest value array", restFn(10, 20, 30, 40));
