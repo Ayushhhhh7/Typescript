@@ -28,4 +28,22 @@ const func = (n: number, m: number): number => {
   return n + m;
 };
 
-func(33, 22);
+// func(33, 22);
+
+//==========Type aliases
+
+type UserName = string | number;
+// let newName = <UserName>"ronaldo";
+let newName: UserName = "ronaldo";
+console.log("newName", newName);
+
+//---------------------
+
+type User = (n: number, m: number) => number;
+
+const newFn: User = (n, m) => {
+  return m * n;
+};
+
+//============Arrays
+

@@ -22,4 +22,10 @@ const func = (n, m) => {
     console.log("Total", n + m);
     return n + m;
 };
-func(33, 22);
+// let newName = <UserName>"ronaldo";
+let newName = "ronaldo";
+console.log("newName", newName);
+const newFn = (n, m) => {
+    return m * n;
+};
+//============Arrays
