@@ -1,4 +1,5 @@
 "use strict";
+var _a;
 //======1st Way
 let a = "Ayush";
 let b = 25;
@@ -24,8 +25,41 @@ const func = (n, m) => {
 };
 // let newName = <UserName>"ronaldo";
 let newName = "ronaldo";
-console.log("newName", newName);
 const newFn = (n, m) => {
     return m * n;
 };
 //============Arrays
+//1st way
+let numberArray = [1, 2, 3, 4];
+let strArray = ["ayush", "dhingra"];
+//2nd way
+const numArray = [2, 3, 5, "ronaldo", 9];
+//Object
+//This is too congested, make a Type aliase outside
+const obj = {
+    fName: "Ayush",
+    height: 200,
+    weight: 85,
+};
+const typeObj = {
+    fName: "Ayush",
+    height: 200,
+    weight: 85,
+};
+const luminosAyush = {
+    fName: "Ayush",
+    height: 200,
+    weight: 85,
+    salary: 20000,
+};
+const luminosNehal = {
+    fName: "Nehal",
+    height: 100,
+    weight: 55,
+    salary: 20000,
+    func: (n, m) => {
+        console.log("n*m", n * m);
+    },
+};
+//If we dont use ?. we will get error "cannot invoke an object which is possibly undefined"
+(_a = luminosNehal === null || luminosNehal === void 0 ? void 0 : luminosNehal.func) === null || _a === void 0 ? void 0 : _a.call(luminosNehal, 20, 30);

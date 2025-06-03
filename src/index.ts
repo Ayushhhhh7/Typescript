@@ -35,7 +35,7 @@ const func = (n: number, m: number): number => {
 type UserName = string | number;
 // let newName = <UserName>"ronaldo";
 let newName: UserName = "ronaldo";
-console.log("newName", newName);
+// console.log("newName", newName);
 
 //---------------------
 
@@ -47,3 +47,73 @@ const newFn: User = (n, m) => {
 
 //============Arrays
 
+//1st way
+let numberArray: number[] = [1, 2, 3, 4];
+let strArray: string[] = ["ayush", "dhingra"];
+
+//2nd way
+const numArray: Array<number | string> = [2, 3, 5, "ronaldo", 9];
+
+//Object
+
+//This is too congested, make a Type aliase outside
+const obj: {
+  fName: string;
+  height: number;
+  weight: number;
+} = {
+  fName: "Ayush",
+  height: 200,
+  weight: 85,
+};
+
+type Person = {
+  fName: string;
+  height: number;
+  weight: number;
+  gender?: boolean;
+};
+
+const typeObj: Person = {
+  fName: "Ayush",
+  height: 200,
+  weight: 85,
+};
+
+//=========Interface
+
+interface PersonInfo {
+  fName: string;
+  height: number;
+  weight: number;
+  gender?: boolean;
+}
+
+//Interface is used when we want to work with classes, we can use "extends"
+
+type FuncType = (n: number, m: number) => void;
+
+interface Employee extends PersonInfo {
+  salary: number;
+  func?: FuncType;
+}
+
+const luminosAyush: Employee = {
+  fName: "Ayush",
+  height: 200,
+  weight: 85,
+  salary: 20000,
+};
+
+const luminosNehal: Employee = {
+  fName: "Nehal",
+  height: 100,
+  weight: 55,
+  salary: 20000,
+  func: (n, m) => {
+    console.log("n*m", n * m);
+  },
+};
+
+//If we dont use ?. we will get error "cannot invoke an object which is possibly undefined"
+luminosNehal?.func?.(20, 30);
