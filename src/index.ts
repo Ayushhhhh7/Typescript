@@ -151,4 +151,30 @@ type RestFunc = (...values: number[]) => number[];
 
 const restFn: RestFunc = (...values) => values;
 
-console.log("Rest value array", restFn(10, 20, 30, 40));
+// console.log("Rest value array", restFn(10, 20, 30, 40));
+
+//=========Functions with objects
+
+type Product = {
+  name: string;
+  stock: number;
+  price: number;
+  readonly id: number;
+};
+
+type GetData = (product: Product) => void;
+
+const getData: GetData = (product) => {
+  // readonly -> cant modify
+  // product.id=22
+  console.log("Product", product);
+};
+
+const productOne: Product = {
+  name: "Ayush",
+  stock: 200,
+  price: 200,
+  id: 7,
+};
+
+getData(productOne)
