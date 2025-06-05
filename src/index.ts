@@ -177,4 +177,8 @@ const productOne: Product = {
   id: 7,
 };
 
-getData(productOne)
+// getData(productOne)
+
+const errorHandler = (): never => {
+  throw new Error();
+};
